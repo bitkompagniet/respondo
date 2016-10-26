@@ -1,0 +1,25 @@
+{
+  "name": "respondo",
+  "version": "0.1.0",
+  "description": "Convenience middleware for building express REST API's",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ."
+  },
+  "author": "Kristian Videmark Parkov",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.0",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2"
+  },
+  "dependencies": {
+    "js2xmlparser": "^2.0.2",
+    "lodash": "^4.16.1"
+  }
+}
