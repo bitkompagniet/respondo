@@ -1,8 +1,9 @@
-Respondo exposes some convenient methods on the `res` object of an express REST API.
+Respondo exposes some convenient methods on the `res` object of an express REST API, and adds some practical middleware for authentication.
+
+## Responders
 
 ```javascript
 app.use(respondo.responders());
-app.use(respondo.errors());
 ```
 
 ```javascript
@@ -35,3 +36,27 @@ res.failure('You are not authorized to do so!', 401);
 
 ```
 
+## Errors
+
+Adds standard errors 404 and 500 to the stack, as a fall-through.
+
+```javascript
+app.use(respondo.errors());
+```
+
+## Authorization middleware
+
+Given the secret key, decodes a [JSON web token](https://www.npmjs.com/package/jsonwebtoken) set on the `Authorization`header. It sets an `identity` field on the `req` object containing properties `user` (the decoded payload) and `authenticated` (a boolean indicating if there is a user).
+
+```javascript
+app.use(respondo.authorizationIdentity('ssshh!'));
+
+// Sets the req.identity property
+app.get('/', function(req, res) {
+	if (!req.identity.authenticated) {
+		return res.send('You are not authenticated');
+	} else {
+		return res.json(req.identity.user);
+	}
+});
+```

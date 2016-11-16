@@ -11,15 +11,17 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.0.2",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.10.0",
     "eslint-plugin-jsx-a11y": "^1.5.3",
-    "eslint-plugin-react": "^5.2.2"
+    "eslint-plugin-react": "^5.2.2",
+    "mocha": "^3.0.2"
   },
   "dependencies": {
     "js2xmlparser": "^2.0.2",
-    "lodash": "^4.16.1"
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.16.1",
+    "rumor": "^1.0.0"
   }
 }
