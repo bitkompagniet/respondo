@@ -38,10 +38,12 @@ res.failure('You are not authorized to do so!', 401);
 
 ## Errors
 
-Adds standard errors 404 and 500 to the stack, as a fall-through.
+Adds standard errors 404 and 500 to the stack, as a fall-through. It also wraps Mongo validation and index errors, and presents them in a more generic way.
+
+When called, it takes a boolean whether we are in production mode. In production mode, any error details of a generic 500 error are hidden from the user. In development mode, it falls through.
 
 ```javascript
-app.use(respondo.errors());
+app.use(respondo.errors(false));
 ```
 
 ## Authorization middleware
