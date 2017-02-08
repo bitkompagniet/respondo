@@ -22,6 +22,6 @@
     "js2xmlparser": "^2.0.2",
     "jsonwebtoken": "^7.1.9",
     "lodash": "^4.16.1",
-    "rumor": "^1.0.0"
+    "rumor": "^1.1.0"
   }
 }
